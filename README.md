@@ -78,7 +78,7 @@ Clone the repo and run locally:
 
 ```bash
 # Clone repository
-git clone https://github.com/mdsahilkhan2001/My-Portfolio
+git clone https://github.com/mdsahilkhan2001/portfolio_by_me
 
 cd My-portfolio
 
