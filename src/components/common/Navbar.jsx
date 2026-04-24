@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
+import { Home, User, Zap, Briefcase, Mail, Cpu, Layout } from 'lucide-react';
 
 const links = [
-  { id: "home", label: "Home", icon: "🏠" },
-  { id: "about", label: "About", icon: "👨‍💻" },
-  { id: "skills", label: "Skills", icon: "⚡" },
-  { id: "projects", label: "Projects", icon: "🚀" },
-  { id: "timeline", label: "Experience", icon: "💼" },
-  { id: "contact", label: "Contact", icon: "📧" }
+  { id: "home", label: "Home", icon: <Home className="w-4 h-4" /> },
+  { id: "about", label: "About", icon: <User className="w-4 h-4" /> },
+  { id: "skills", label: "Skills", icon: <Zap className="w-4 h-4" /> },
+  { id: "projects", label: "Projects", icon: <Layout className="w-4 h-4" /> },
+  { id: "timeline", label: "Experience", icon: <Briefcase className="w-4 h-4" /> },
+  { id: "contact", label: "Contact", icon: <Mail className="w-4 h-4" /> }
 ];
 
 export default function Navbar() {
@@ -16,15 +17,22 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
-  // ✅ Theme state with default = "dark"
-  const [theme, setTheme] = useState("dark");
+  // ✅ Theme state with default = "dark" and persistence
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") === "light" ? "light" : "dark";
+    }
+    return "dark";
+  });
 
-  // Apply theme to <html> tag
+  // Apply theme to <html> tag and persist to localStorage
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, [theme]);
 
@@ -104,13 +112,13 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-md bg-white/80 dark:bg-gray-900/80 shadow-lg border-b border-gray-200/50 dark:border-gray-800/50"
-          : "backdrop-blur-sm bg-white/60 dark:bg-gray-900/60 border-b border-gray-200/30 dark:border-gray-800/30"
+          ? "backdrop-blur-xl bg-white/70 dark:bg-gray-950/70 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-b border-white/20 dark:border-gray-800/50 py-1"
+          : "backdrop-blur-sm bg-transparent border-b border-transparent py-3"
       }`}
     >
-      <div className="container flex items-center justify-between h-16 lg:h-18">
+      <div className="max-w-[1400px] mx-auto px-4 lg:px-8 flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
         <motion.div
           variants={logoVariants}
@@ -135,7 +143,7 @@ export default function Navbar() {
               className="absolute inset-0 rounded-full border-2 border-blue-400"
             />
           </motion.div>
-          <div>
+          <div className="hidden sm:block">
             <motion.h1
               className="font-bold text-lg bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
               whileHover={{ scale: 1.02 }}
@@ -148,7 +156,7 @@ export default function Navbar() {
               transition={{ delay: 0.5 }}
               className="text-xs text-gray-500 dark:text-gray-400 font-medium"
             >
-              Full Stack Developer
+              Software Engineer
             </motion.p>
           </div>
         </motion.div>
@@ -156,7 +164,7 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center">
           {/* Navigation Links */}
-          <div className="flex items-center gap-1 mr-6 bg-gray-100/50 dark:bg-gray-800/50 rounded-full p-1 backdrop-blur-sm">
+          <div className="flex items-center gap-1 mr-6 bg-white/40 dark:bg-gray-900/40 backdrop-blur-md rounded-full p-1.5 border border-gray-200/50 dark:border-gray-800/50 shadow-sm">
             {links.map((link) => (
               <motion.button
                 key={link.id}
@@ -164,7 +172,7 @@ export default function Navbar() {
                 initial="initial"
                 whileHover="hover"
                 onClick={() => handleNav(link.id)}
-                className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
+                className={`relative px-4 py-2 text-xs font-bold rounded-full transition-colors duration-300 ${
                   activeSection === link.id
                     ? "text-white"
                     : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
@@ -173,13 +181,13 @@ export default function Navbar() {
                 {/* Active background */}
                 {activeSection === link.id && (
                   <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    layoutId="activeTabDesktop"
+                    className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full shadow-md"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
-                <span className="relative z-10 flex items-center gap-2">
-                  <span className="hidden xl:inline">{link.icon}</span>
+                <span className="relative z-10 flex items-center gap-1.5 uppercase tracking-wider">
+                  {link.icon}
                   {link.label}
                 </span>
               </motion.button>

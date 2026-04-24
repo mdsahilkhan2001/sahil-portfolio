@@ -7,7 +7,18 @@
     <title>MD SAHIL KHAN | Portfolio</title>
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script>
+      // Initialize theme early to avoid light mode flash
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
   <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
     <div id="root"></div>

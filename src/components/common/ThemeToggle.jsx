@@ -1,14 +1,41 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle({ theme, setTheme }) {
   const toggle = () => setTheme(theme === "dark" ? "light" : "dark");
+  
   return (
-    <button onClick={toggle} aria-label="Toggle theme" className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-      {theme === "dark" ? (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-      ) : (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-      )}
+    <button 
+      onClick={toggle} 
+      aria-label="Toggle theme" 
+      className="relative p-2.5 rounded-full bg-white/50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50 hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm backdrop-blur-md"
+    >
+      <AnimatePresence mode="wait" initial={false}>
+        {theme === "dark" ? (
+          <motion.div
+            key="sun"
+            initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+            animate={{ opacity: 1, rotate: 0, scale: 1 }}
+            exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+            transition={{ duration: 0.2 }}
+            className="flex items-center justify-center"
+          >
+            <Sun className="w-5 h-5 text-amber-400 drop-shadow-md" />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="moon"
+            initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+            animate={{ opacity: 1, rotate: 0, scale: 1 }}
+            exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+            transition={{ duration: 0.2 }}
+            className="flex items-center justify-center"
+          >
+            <Moon className="w-5 h-5 text-indigo-600 drop-shadow-md" />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </button>
   );
 }
