@@ -12,29 +12,10 @@ const links = [
   { id: "contact", label: "Contact", icon: <Mail className="w-4 h-4" /> }
 ];
 
-export default function Navbar() {
+export default function Navbar({ theme, setTheme }) {
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-
-  // ✅ Theme state with default = "dark" and persistence
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") === "light" ? "light" : "dark";
-    }
-    return "dark";
-  });
-
-  // Apply theme to <html> tag and persist to localStorage
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [theme]);
 
   // Track active section and scroll state
   useEffect(() => {

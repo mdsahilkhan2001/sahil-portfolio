@@ -180,13 +180,13 @@ const CursorFollower = () => {
         left: 0;
         width: 30px;
         height: 10px;
-        background: rgba(0, 0, 0, 0.15);
-        filter: blur(8px);
+        background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
         border-radius: 50%;
         pointer-events: none;
         z-index: 9998;
         margin-top: -5px;
         margin-left: -15px;
+        will-change: transform, opacity;
       }
     `;
     document.head.appendChild(style);

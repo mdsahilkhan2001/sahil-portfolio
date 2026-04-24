@@ -9,8 +9,8 @@ function App() {
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem("theme");
     if (saved) return saved;
-    // prefer dark for system? default light
-    return "light";
+    // default to dark mode for new users
+    return "dark";
   });
 
   useEffect(() => {
