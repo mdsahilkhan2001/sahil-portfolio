@@ -55,7 +55,7 @@ export const projects = [
     github: "https://github.com/mdsahilkhan2001",
     live: "",
     tags: ["React", "Node.js", "MongoDB", "Express"],
-    img: "/icons/primeappreal.png",
+    img: "/project section img/b2b erp.png",
     companyProject: true,
     role: "Full Stack MERN Developer",
     details: {
@@ -75,12 +75,12 @@ export const projects = [
   },
   {
     id: "community-platform",
-    title: "Enterprise Community Platform",
-    desc: "A scalable, real-time discussion platform with role-based access control and advanced content moderation.",
+    title: "Discuss Community",
+    desc: "A modern social platform for verified educational communities, featuring real-time discussions, role-based access, and structured knowledge sharing.",
     github: "https://github.com/mdsahilkhan2001", 
     live: "", 
     tags: ["React", "Django", "PostgreSQL", "JWT"],
-    img: "/icons/discuss coomunity.png",
+    img: "/project section img/dashboard_2.png",
     companyProject: true,
     role: "Project Lead & Full Stack Developer",
     details: {
@@ -100,13 +100,14 @@ export const projects = [
   },
   {
     id: "erp-lms",
-    title: "Unified ERP + LMS System",
-    desc: "A centralized platform integrating business operations (ERP) and educational workflows (LMS) into a single scalable solution.",
+    title: "ERP Education System",
+    desc: "A comprehensive ERP platform serving 4,000+ users across 2+ colleges, designed to streamline academic administration, hostel management, placement tracking, and security operations.",
     github: "https://github.com/mdsahilkhan2001",
     live: "", 
-    tags: ["React", "Node.js", "MongoDB", "Analytics"],
-    img: "/icons/erp project.png",
+    tags: ["React", "Django", "PostgreSQL", "Redis"],
+    img: "/project section img/ERP heo.png",
     companyProject: true,
+    isLive: true,
     role: "Project Lead & Full Stack Engineer",
     details: {
       idea: "To simplify complex organizational workflows by merging business operations (ERP) and learning management (LMS) into a single, cohesive, and highly scalable platform for educational institutions.",
@@ -121,6 +122,31 @@ export const projects = [
       contribution: "Led the project architecture and full-stack implementation. Built the responsive UI with React.js and developed the backend APIs using Node.js/Express. Implemented the role-based dashboards, secure JWT authentication, and integrated complex analytics for data-driven reporting.",
       techStack: "React.js, Node.js (Express), MongoDB, JWT, Postman",
       highlights: "Engineered a complete ERP + LMS hybrid system focused on scalability, performance, and delivering actionable data insights."
+    }
+  },
+  {
+    id: "ai-interview",
+    title: "AI Interview Platform",
+    desc: "An AI-powered interview platform designed to automate and scale technical interviews with reliable session management, automated scheduling, and intelligent evaluation workflows.",
+    github: "https://github.com/mdsahilkhan2001",
+    live: "",
+    tags: ["React", "Django", "PostgreSQL", "AI", "WebSocket", "Redis"],
+    img: "/ai_interview_platform_mockup_1778916629839.png",
+    companyProject: true,
+    role: "Full Stack AI Developer",
+    details: {
+      idea: "To automate the first round of technical interviews using intelligent AI agents that can evaluate coding skills and theoretical knowledge in real-time.",
+      summary: "This platform leverages LLMs and WebSockets to conduct interactive technical interviews. It features a real-time code editor, automated scheduling, and a detailed evaluation system that generates comprehensive candidate reports.",
+      features: [
+        "Real-time AI Interview Agent",
+        "Automated Interview Scheduling",
+        "Integrated Code Execution Engine",
+        "Session Persistence & Management",
+        "Intelligent Evaluation & Scoring"
+      ],
+      contribution: "Architected the real-time communication layer using WebSockets and Redis. Integrated AI models for intelligent questioning and evaluation. Built the React-based interview dashboard with an embedded code editor.",
+      techStack: "React, Django REST Framework, PostgreSQL, JWT, AI Integration, WebSocket, Redis",
+      highlights: "Developed a scalable solution capable of conducting hundreds of concurrent automated interviews with objective evaluation metrics."
     }
   },
   {
@@ -142,6 +168,56 @@ export const projects = [
     tags: ["React", "API Integration"],
     img: f1Img,
     details: null
+  },
+  {
+    id: "hospital-analytics",
+    title: "US Hospital ERP Analytics Dashboard",
+    desc: "Advanced healthcare business intelligence platform built using Power BI and DAX to transform hospital ERP data into actionable insights.",
+    github: "https://github.com/mdsahilkhan2001",
+    live: "",
+    tags: ["Power BI", "DAX", "Excel", "Data Analytics"],
+    img: "/hospital_analytics_dashboard.png",
+    companyProject: true,
+    role: "Data Analyst · BI Developer",
+    details: {
+      idea: "To build a high-performance healthcare analytics system that provides executive-level visibility into hospital operations and financial KPIs.",
+      summary: "An enterprise-grade hospital ERP dashboard developed with Power BI, focusing on patient outcomes, revenue analytics, and operational efficiency metrics.",
+      features: [
+        "Executive Revenue & Expense Monitoring",
+        "Patient Admission & Outcome Trends",
+        "Departmental Performance Analytics",
+        "Interactive Power BI Visualizations",
+        "Advanced DAX Financial Measures"
+      ],
+      contribution: "Designed the full data model, developed complex DAX KPI measures, and built the interactive multi-page dashboard for executive reporting.",
+      techStack: "Power BI, DAX, Excel, Power Query",
+      highlights: "Transformed raw hospital ERP data into an interactive, executive-grade business intelligence platform for data-driven decision making."
+    }
+  },
+  {
+    id: "covid-detection",
+    title: "COVID-19 Radiography Detection System",
+    desc: "AI-powered medical imaging platform that uses CNNs and Grad-CAM visualization to detect COVID-19 and lung conditions.",
+    github: "https://github.com/mdsahilkhan2001",
+    live: "",
+    tags: ["TensorFlow", "CNN", "Grad-CAM", "Computer Vision"],
+    img: "/covid_ai_dashboard.png",
+    companyProject: true,
+    role: "AI/ML Engineer · Deep Learning",
+    details: {
+      idea: "To build a transparent AI diagnostic tool that not only predicts lung conditions but also explains its decisions visually for medical trust.",
+      summary: "A production-grade medical AI system capable of multi-class classification (COVID-19, Pneumonia, Normal) with integrated Grad-CAM heatmaps for explainable clinical assistance.",
+      features: [
+        "Multi-class Radiography Classification",
+        "Grad-CAM Explainable AI Visualization",
+        "Interactive Gradio Medical Interface",
+        "Real-time Image Preprocessing Pipeline",
+        "Clinical Diagnostic Insights"
+      ],
+      contribution: "Engineered the deep learning pipeline, implemented the Grad-CAM visualization logic, and designed the interactive medical UI for real-time diagnostics.",
+      techStack: "Python, TensorFlow, OpenCV, Gradio, Matplotlib",
+      highlights: "Achieved high interpretability in medical imaging diagnostics by bridging the gap between deep learning and clinical trust."
+    }
   },
   {
     id: "SkinCare",

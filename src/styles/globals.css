@@ -1,13 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* custom styles */
-:root{
+:root {
   --accent: #7c3aed;
 }
-html { scroll-behavior: smooth; }
-body { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body { 
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+}
 
 .container {
   max-width: 1100px;
@@ -15,4 +24,10 @@ body { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+/* Custom selection color */
+::selection {
+  background: #7c3aed;
+  color: white;
 }
