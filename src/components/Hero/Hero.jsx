@@ -258,16 +258,6 @@ export default function Hero() {
                    </div>
                 </motion.div>
 
-                {/* Floating Shard (Deep Front) */}
-                <motion.div 
-                  className="absolute -top-12 -left-12 w-24 h-24 bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl z-40"
-                  style={{ 
-                    clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-                    transform: "translateZ(180px)" 
-                  }}
-                  animate={{ y: [0, -20, 0], rotate: [0, 90, 0] }}
-                  transition={{ duration: 6, repeat: Infinity }}
-                />
              </motion.div>
           </motion.div>
         </motion.div>
