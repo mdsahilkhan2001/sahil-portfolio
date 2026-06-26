@@ -9,6 +9,7 @@ import {
 import gayaCollegeLog from "../../assets/gce.jpeg";
 
 const logoMap = {
+  "learnsquare": "/icons/ls logo.png",
   "dmx": "/icons/DMX logo.png",
   "evoastra": "/icons/evostra venture.png",
   "freelance": ["/icons/upwaork.png", "/icons/fiverr-icon.png"],
@@ -16,6 +17,7 @@ const logoMap = {
 };
 
 const iconMap = {
+  "learnsquare": <Briefcase className="w-5 h-5" />,
   "dmx": <Briefcase className="w-5 h-5" />,
   "evoastra": <Cpu className="w-5 h-5" />,
   "freelance": <User className="w-5 h-5" />,
@@ -23,6 +25,7 @@ const iconMap = {
 };
 
 const accentGradients = {
+  "learnsquare": "from-teal-600 to-emerald-500",
   "dmx": "from-blue-600 to-cyan-500",
   "evoastra": "from-violet-600 to-purple-500",
   "freelance": "from-emerald-600 to-green-500",
@@ -30,6 +33,7 @@ const accentGradients = {
 };
 
 const bgAccents = {
+  "learnsquare": "bg-teal-50 dark:bg-teal-900/10 border-teal-100 dark:border-teal-800/30",
   "dmx": "bg-blue-50 dark:bg-blue-900/10 border-blue-100 dark:border-blue-800/30",
   "evoastra": "bg-violet-50 dark:bg-violet-900/10 border-violet-100 dark:border-violet-800/30",
   "freelance": "bg-emerald-50 dark:bg-emerald-900/10 border-emerald-100 dark:border-emerald-800/30",
@@ -37,6 +41,7 @@ const bgAccents = {
 };
 
 const nodeColors = {
+  "learnsquare": "border-teal-500 shadow-[0_0_20px_rgba(20,184,166,0.7)]",
   "dmx": "border-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.7)]",
   "evoastra": "border-violet-500 shadow-[0_0_20px_rgba(139,92,246,0.7)]",
   "freelance": "border-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.7)]",

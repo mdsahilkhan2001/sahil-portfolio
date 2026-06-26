@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { 
   ArrowLeft, BarChart, Zap, Filter, FileSpreadsheet, Eraser, Layers, 
   Activity, MousePointer2, Layout, CheckCircle2, TrendingUp, Users, 
-  DollarSign, PieChart, ArrowRight, Code, Sparkles, Database, ShieldCheck
+  DollarSign, PieChart, ArrowRight, Code, Sparkles, Database, ShieldCheck, Clock
 } from "lucide-react";
 import { hospitalData as d } from "../data/hospitalAnalyticsData";
 

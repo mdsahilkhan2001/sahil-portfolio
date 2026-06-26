@@ -1,4 +1,4 @@
- // ✅ Import project images (keep assets for projects)
+// ✅ Import project images (keep assets for projects)
 import productImg from "../assets/product.png";
 import f1Img from "../assets/f1.png";
 import figmaImg from "../assets/figma.png";
@@ -14,7 +14,7 @@ export const siteMeta = {
     "Full Stack Developer",
     "MERN Stack Developer"
   ],
-  phone: "+91 82912 20629",
+  phone: "+91 7079990338",
   email: "mdsahilkhan2001@gmail.com",
   linkedin: "https://www.linkedin.com/in/sahilkhanq1",
   github: "https://github.com/mdsahilkhan2001",
@@ -77,8 +77,8 @@ export const projects = [
     id: "community-platform",
     title: "Discuss Community",
     desc: "A modern social platform for verified educational communities, featuring real-time discussions, role-based access, and structured knowledge sharing.",
-    github: "https://github.com/mdsahilkhan2001", 
-    live: "", 
+    github: "https://github.com/mdsahilkhan2001",
+    live: "",
     tags: ["React", "Django", "PostgreSQL", "JWT"],
     img: "/project section img/dashboard_2.png",
     companyProject: true,
@@ -103,7 +103,7 @@ export const projects = [
     title: "ERP Education System",
     desc: "A comprehensive ERP platform serving 4,000+ users across 2+ colleges, designed to streamline academic administration, hostel management, placement tracking, and security operations.",
     github: "https://github.com/mdsahilkhan2001",
-    live: "", 
+    live: "",
     tags: ["React", "Django", "PostgreSQL", "Redis"],
     img: "/project section img/ERP heo.png",
     companyProject: true,
@@ -232,12 +232,32 @@ export const projects = [
 ];
 
 export const timeline = [
-
+  {
+    id: "learnsquare",
+    title: "Software Engineer",
+    company: "LEARNSQUARE Technologies",
+    timeframe: "Feb 2026 - Present",
+    desc: "Leading the development of the AICAS ERP platform and comprehensive Learning Management System (LMS). Orchestrating full-stack engineering efforts to streamline academic administration and enhance semester preparation workflows for educational institutions.",
+    projects: [
+      {
+        name: "AICAS ERP Platform",
+        detail: "Architecting a highly scalable enterprise resource planning solution tailored for educational institutions, integrating advanced modules for administration, finance, and seamless academic data management."
+      },
+      {
+        name: "Comprehensive LMS",
+        detail: "Developing an intuitive and dynamic Learning Management System to facilitate digital learning, course content management, and real-time student engagement."
+      },
+      {
+        name: "Semester Preparation Module",
+        detail: "Engineered automated workflows and data aggregation tools to completely streamline the end-to-end semester transition and academic preparation process."
+      }
+    ]
+  },
   {
     id: "dmx",
     title: "Software Engineer",
     company: "DMX Tech Services Pvt. Ltd.",
-    timeframe: "May 2025 - Present",
+    timeframe: "May 2025 - Jan 2026",
     desc: "Spearheading the architectural design and full-stack development of high-scale enterprise solutions. Driving end-to-end engineering for complex College ERPs, sophisticated e-learning ecosystems, and data-intensive logistics platforms using modern stacks.",
     projects: [
       {

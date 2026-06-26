@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import TypedText from "./TypedText";
 import { siteMeta } from "../../data/siteContent";
+import RobotHero from "./RobotHero";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Github, Linkedin, Mail, ExternalLink, Download, ArrowRight, CheckCircle2, Zap, Globe } from 'lucide-react';
 
@@ -128,7 +128,7 @@ export default function Hero() {
                 {siteMeta.tagline}
               </p>
               <div className="text-4xl lg:text-5xl font-extrabold text-gray-800 dark:text-gray-100 min-h-[4rem] flex items-center">
-                <TypedText strings={siteMeta.roleTypes} />
+                {siteMeta.roleTypes[0]}
               </div>
             </motion.div>
 
@@ -206,7 +206,7 @@ export default function Hero() {
                  transition={{ duration: 8, repeat: Infinity }}
                  className="text-[250px] font-black text-blue-600 dark:text-blue-400 uppercase leading-none blur-sm"
                >
-                 SAHIL
+                 BOT
                </motion.h2>
              </motion.div>
 
@@ -216,9 +216,9 @@ export default function Hero() {
                className="absolute w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[120px] pointer-events-none z-10"
              />
              
-             {/* Layer 3: The 3D Floating Block (Magnetic Follow) */}
+             {/* Layer 3: RobotHero */}
              <motion.div 
-               className="relative z-20 cursor-pointer group"
+               className="relative z-20 w-full h-full flex items-center justify-center"
                style={{ 
                  transformStyle: "preserve-3d",
                  rotateX: cardRotateX,
@@ -226,47 +226,8 @@ export default function Hero() {
                  x: cardX,
                  y: cardY
                }}
-               animate={{ 
-                 rotateY: isRotating ? 360 : undefined,
-               }}
-               transition={{ 
-                 rotateY: { duration: 1.2, ease: [0.22, 1, 0.36, 1] }
-               }}
-               onClick={() => {
-                 setIsRotating(true);
-                 setTimeout(() => {
-                   setIsRotating(false);
-                   setCurrentImageIndex((prev) => (prev + 1) % profileImages.length);
-                 }, 1200);
-               }}
              >
-                {/* Faceted Crystal Frame */}
-                <div 
-                  className="relative w-[420px] aspect-[4/5.5] bg-white/10 dark:bg-gray-900/40 backdrop-blur-3xl border border-white/30 dark:border-white/10 overflow-hidden shadow-[0_60px_120px_rgba(0,0,0,0.5)] transition-shadow group-hover:shadow-blue-500/20"
-                  style={{ 
-                    clipPath: "polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)",
-                    transform: "translateZ(50px)"
-                  }}
-                >
-                  <AnimatePresence mode="wait">
-                    <motion.img 
-                      key={currentImageIndex}
-                      src={profileImages[currentImageIndex]} 
-                      alt="Sahil Khan" 
-                      initial={{ opacity: 0, scale: 1.2 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 1.1 }}
-                      transition={{ duration: 0.8 }}
-                      className="w-full h-full object-cover" 
-                    />
-                  </AnimatePresence>
-                  
-                  {/* Glass Shine Effect */}
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-transparent to-transparent"></div>
-                </div>
+                <RobotHero />
 
                 {/* Front Label Layer (Extreme Parallax) */}
                 <motion.div 
