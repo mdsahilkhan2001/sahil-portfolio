@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 import { Home, User, Zap, Briefcase, Mail, Cpu, Layout } from 'lucide-react';
@@ -8,11 +9,14 @@ const links = [
   { id: "about", label: "About", icon: <User className="w-4 h-4" /> },
   { id: "skills", label: "Skills", icon: <Zap className="w-4 h-4" /> },
   { id: "projects", label: "Projects", icon: <Layout className="w-4 h-4" /> },
+  { id: "services", label: "Services", icon: <Cpu className="w-4 h-4" />, path: "/services" },
   { id: "timeline", label: "Experience", icon: <Briefcase className="w-4 h-4" /> },
   { id: "contact", label: "Contact", icon: <Mail className="w-4 h-4" /> }
 ];
 
 export default function Navbar({ theme, setTheme }) {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -22,6 +26,11 @@ export default function Navbar({ theme, setTheme }) {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setScrolled(scrollPosition > 50);
+
+      if (location.pathname === "/services") {
+        setActiveSection("services");
+        return;
+      }
 
       // Find active section
       const sections = links.map(link => document.getElementById(link.id)).filter(Boolean);
@@ -38,11 +47,31 @@ export default function Navbar({ theme, setTheme }) {
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Call once to set initial state
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const handleNav = (id) => {
     setOpen(false);
     setActiveSection(id);
+
+    if (id === "services") {
+      navigate("/services");
+      window.requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      return;
+    }
+
+    if (location.pathname !== "/") {
+      navigate("/");
+      window.setTimeout(() => {
+        const homeSection = document.getElementById(id);
+        if (homeSection) {
+          homeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 120);
+      return;
+    }
+
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });

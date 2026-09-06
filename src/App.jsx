@@ -10,6 +10,7 @@ import MovieProjectPage from "./pages/MovieProjectPage";
 import SkincareProjectPage from "./pages/SkincareProjectPage";
 import CovidProjectPage from "./pages/CovidProjectPage";
 import HospitalAnalyticsProjectPage from "./pages/HospitalAnalyticsProjectPage";
+import ServicesPage from "./pages/ServicesPage";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import './styles/globals.css'
@@ -38,6 +39,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/services" element={<ServicesPage />} />
             <Route path="/project/prime-apparel" element={<ProjectDetailPage />} />
             <Route path="/project/erp-lms" element={<AicasProjectPage />} />
             <Route path="/project/community-platform" element={<DiscussProjectPage />} />
